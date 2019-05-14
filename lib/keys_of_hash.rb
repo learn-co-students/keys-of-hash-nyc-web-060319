@@ -1,5 +1,8 @@
+require "pry"
 class Hash
-  def keys_of(arguments)
-    # code goes here
+  def keys_of(*arguments)
+    self.keys.select do |key|
+      arguments.include?(self[key])
+    end
   end
 end
